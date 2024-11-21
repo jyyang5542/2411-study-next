@@ -51,17 +51,7 @@ const Typography = ({ variant = 'body1', color = 'default', children, ...props }
           {children}
         </p>
       )}
-      {variant === 'body1' && (
-        <p className={classes} {...props}>
-          {children}
-        </p>
-      )}
-      {variant === 'body2' && (
-        <p className={classes} {...props}>
-          {children}
-        </p>
-      )}
-      {!variant && (
+      {(variant === 'body1' || variant === 'body2' || !variant) && (
         <p className={classes} {...props}>
           {children}
         </p>
