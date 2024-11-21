@@ -1,0 +1,79 @@
+@use '../styles/variables' as var;
+@use '../styles/mixins' as mixin;
+@use '../styles/functions' as fn;
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  }
+  &:disabled {
+    color: var.$col_white;
+    background-color: var.$col_gray_light_1;
+    pointer-events: none;
+  }
+}
+
+// variant
+.primary {
+  color: var.$col_white;
+  background-color: var.$col_primary;
+
+  &:hover {
+    background-color: var.$col_primary_dark;
+  }
+}
+.secondary {
+  color: var.$col_white;
+  background-color: var.$col_secondary;
+
+  &:hover {
+    background-color: var.$col_secondary_dark;
+  }
+}
+.border {
+  color: var.$col_gray_dark_1;
+  background-color: var.$col_white;
+  border: 1px solid var.$col_gray_dark_1;
+}
+.borderPrimary {
+  color: var.$col_primary;
+  background-color: var.$col_white;
+  border: 1px solid var.$col_primary;
+}
+.borderSecondary {
+  color: var.$col_secondary;
+  background-color: var.$col_white;
+  border: 1px solid var.$col_secondary;
+}
+
+// size
+.xxs {
+  height: 20px;
+}
+.xs {
+  height: 24px;
+}
+.sm {
+  height: 30px;
+}
+.md {
+  height: 48px;
+}
+.lg {
+  height: 50px;
+}
+.xl {
+  height: 72px;
+}
+.xxl {
+  height: 100px;
+}

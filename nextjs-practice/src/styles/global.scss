@@ -1,0 +1,25 @@
+@use './variables' as var;
+@use './mixins' as mixin;
+@use './functions' as fn;
+@use './reset';
+
+html {
+  font-size: 16px;
+
+  @media screen and (max-width: var.$vw_tab) {
+    font-size: fn.vw-tab(16px);
+  }
+  @media screen and (max-width: var.$vw_mo) {
+    font-size: fn.vw-mo(16px);
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: var.$col_black;
+  background-color: #fff;
+}

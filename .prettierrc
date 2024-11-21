@@ -3,9 +3,12 @@
   "useTabs": false,
   "semi": false,
   "bracketSpacing": true,
+  "bracketSameLine": true,
+  "jsxBracketSameLine": true,
   "endOfLine": "lf",
   "singleQuote": true,
-  "printWidth": 200,
+  "printWidth": 250,
   "trailingComma": "all",
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "htmlWhitespaceSensitivity": "ignore"
 }

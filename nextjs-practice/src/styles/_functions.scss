@@ -1,0 +1,11 @@
+@use './variables' as var;
+
+// 모바일 해상도 단위 변환 (px → vw)
+@function vw-mo($val, $device-width: var.$vw_mo) {
+  @return calc(($val * 100vw) / $device-width);
+}
+
+// 태블릿 해상도 단위 변환 (px → vw)
+@function vw-tab($val, $device-width: var.$vw_tab) {
+  @return calc(($val * 100vw) / $device-width);
+}

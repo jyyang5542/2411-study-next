@@ -1,0 +1,47 @@
+@charset 'utf-8';
+
+@use './variables';
+@use './mixins';
+@use './functions';
+
+/****************************************
+ (S) 레이아웃 관련 스타일
+****************************************/
+// Grid (display: flex)
+.row {
+  $columns: 12;
+  @for $i from 1 through $columns {
+    .col-#{$i} {
+      width: #{100% / $columns * $i};
+    }
+  }
+}
+// Grid (display: grid)
+.grid {
+}
+/****************************************
+ (E) 레이아웃 관련 스타일
+****************************************/
+
+/****************************************
+ (S) 폰트 관련 스타일
+****************************************/
+// Fonts
+.txtLeft {
+  text-align: left;
+}
+.txtCenter {
+  text-align: center;
+}
+.txtRight {
+  text-align: right;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+/****************************************
+ (E) 폰트 관련 스타일
+****************************************/

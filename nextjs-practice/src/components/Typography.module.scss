@@ -1,0 +1,41 @@
+@use '../styles/variables' as var;
+@use '../styles/mixins' as mixin;
+@use '../styles/functions' as fn;
+
+.h1 {
+  font-size: 2rem;
+  color: var.$col_black;
+}
+.h2 {
+  font-size: 1.875rem;
+}
+.h3 {
+  font-size: 1.5rem;
+}
+.h4 {
+  font-size: 1.4rem;
+}
+.h5 {
+  font-size: 1.3rem;
+}
+.h6 {
+  font-size: 1.2rem;
+}
+.subtitle1 {
+  font-weight: 600;
+}
+.subtitle2 {
+  font-weight: 600;
+}
+.body1 {
+  font-size: 1rem;
+}
+.body2 {
+  font-size: 0.875rem;
+}
+.primary {
+  color: var.$col_primary;
+}
+.secondary {
+  color: var.$col_secondary;
+}
