@@ -11,24 +11,39 @@ export default {
 
 // variant 정의
 const VariantTemplate: StoryFn = () => {
-  const variants = ['primary', 'secondary', 'border', 'borderPrimary', 'borderSecondary']
   return (
     <>
       <div>
         <Button>Default</Button>
         <br />
 
-        {variants.map(variant => (
-          <>
-            <Button key={variant} size="md" variant={variant} onClick={() => {}}>
-              variant=&quot;{variant}&quot;
-            </Button>
-            <br />
-          </>
-        ))}
+        <Button size="md" variant="primary" onClick={() => {}}>
+          variant=&quot;primary&quot;
+        </Button>
+        <br />
+
+        <Button size="md" variant="secondary" onClick={() => {}}>
+          variant=&quot;secondary&quot;
+        </Button>
+        <br />
+
+        <Button size="md" variant="border" onClick={() => {}}>
+          variant=&quot;border&quot;
+        </Button>
+        <br />
+
+        <Button size="md" variant="borderPrimary" onClick={() => {}}>
+          variant=&quot;borderPrimary&quot;
+        </Button>
+        <br />
+
+        <Button size="md" variant="borderSecondary" onClick={() => {}}>
+          variant=&quot;borderSecondary&quot;
+        </Button>
+        <br />
 
         <Button size="md" variant="primary" disabled onClick={() => {}}>
-          Disabled
+          disabled
         </Button>
       </div>
     </>
@@ -37,18 +52,33 @@ const VariantTemplate: StoryFn = () => {
 
 // size 정의
 const SizeTemplate: StoryFn = () => {
-  const sizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl']
   return (
     <>
       <div>
-        {sizes.map(size => (
-          <>
-            <Button key={size} size={size} variant="borderPrimary" onClick={() => {}}>
-              size=&quot;{size}&quot;
-            </Button>
-            <br />
-          </>
-        ))}
+        <Button size="xs" variant="borderPrimary" onClick={() => {}}>
+          size=&quot;xs&quot;
+        </Button>
+        <br />
+
+        <Button size="sm" variant="borderPrimary" onClick={() => {}}>
+          size=&quot;sm&quot;
+        </Button>
+        <br />
+
+        <Button size="md" variant="borderPrimary" onClick={() => {}}>
+          size=&quot;md&quot;
+        </Button>
+        <br />
+
+        <Button size="lg" variant="borderPrimary" onClick={() => {}}>
+          size=&quot;lg&quot;
+        </Button>
+        <br />
+
+        <Button size="xl" variant="borderPrimary" onClick={() => {}}>
+          size=&quot;xl&quot;
+        </Button>
+        <br />
       </div>
     </>
   )

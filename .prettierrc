@@ -7,7 +7,7 @@
   "jsxBracketSameLine": true,
   "endOfLine": "lf",
   "singleQuote": true,
-  "printWidth": 250,
+  "printWidth": 200,
   "trailingComma": "all",
   "arrowParens": "avoid",
   "htmlWhitespaceSensitivity": "ignore"

@@ -11,33 +11,29 @@ export default {
 
 // variant 템플릿 정의
 const VariantTemplate: StoryFn = () => {
-  const variants = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2']
   return (
-    <>
-      <div>
-        {variants.map(variant => (
-          <Typography key={variant} variant={variant}>
-            variant=&quot;{variant}&quot;
-          </Typography>
-        ))}
-      </div>
-    </>
+    <div>
+      <Typography variant="h1">variant=&quot;h1&quot;</Typography>
+      <Typography variant="h2">variant=&quot;h2&quot;</Typography>
+      <Typography variant="h3">variant=&quot;h3&quot;</Typography>
+      <Typography variant="h4">variant=&quot;h4&quot;</Typography>
+      <Typography variant="h5">variant=&quot;h5&quot;</Typography>
+      <Typography variant="h6">variant=&quot;h6&quot;</Typography>
+      <Typography variant="subtitle1">variant=&quot;subtitle1&quot;</Typography>
+      <Typography variant="subtitle2">variant=&quot;subtitle2&quot;</Typography>
+      <Typography variant="body1">variant=&quot;body1&quot;</Typography>
+      <Typography variant="body2">variant=&quot;body2&quot;</Typography>
+    </div>
   )
 }
 
 // color 템플릿 정의
 const ColorTemplate: StoryFn = () => {
-  const colors = ['primary', 'secondary']
   return (
-    <>
-      <div>
-        {colors.map(color => (
-          <Typography key={color} color={color}>
-            color=&quot;{color}&quot;
-          </Typography>
-        ))}
-      </div>
-    </>
+    <div>
+      <Typography color="primary">color=&quot;primary&quot;</Typography>
+      <Typography color="secondary">color=&quot;secondary&quot;</Typography>
+    </div>
   )
 }
 
