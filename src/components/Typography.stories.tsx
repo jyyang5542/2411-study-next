@@ -1,44 +1,120 @@
-import { Meta, StoryFn } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import Typography from './Typography'
 
-export default {
+const meta = {
   title: 'Components/Typography',
   component: Typography,
+  parameters: {
+    layout: 'centered',
+  },
   argTypes: {
     // onClick: { action: 'clicked' },
   },
-} as Meta<typeof Typography>
+  tags: ['autodocs'],
+  args: {
+    // onClick: fn(),
+  },
+} satisfies Meta<typeof Typography>
+
+export default meta
+type Story = StoryObj<typeof meta>
 
 // variant 템플릿 정의
-const VariantTemplate: StoryFn = () => {
-  return (
-    <div>
-      <Typography variant="h1">variant=&quot;h1&quot;</Typography>
-      <Typography variant="h2">variant=&quot;h2&quot;</Typography>
-      <Typography variant="h3">variant=&quot;h3&quot;</Typography>
-      <Typography variant="h4">variant=&quot;h4&quot;</Typography>
-      <Typography variant="h5">variant=&quot;h5&quot;</Typography>
-      <Typography variant="h6">variant=&quot;h6&quot;</Typography>
-      <Typography variant="subtitle1">variant=&quot;subtitle1&quot;</Typography>
-      <Typography variant="subtitle2">variant=&quot;subtitle2&quot;</Typography>
-      <Typography variant="body1">variant=&quot;body1&quot;</Typography>
-      <Typography variant="body2">variant=&quot;body2&quot;</Typography>
-    </div>
-  )
+export const H1: Story = {
+  args: {
+    variant: 'h1',
+    children: 'Lorem Ipsum',
+  },
 }
+H1.storyName = 'Variant: H1'
+
+export const H2: Story = {
+  args: {
+    variant: 'h2',
+    children: 'Lorem Ipsum',
+  },
+}
+H2.storyName = 'Variant: H2'
+
+export const H3: Story = {
+  args: {
+    variant: 'h3',
+    children: 'Lorem Ipsum',
+  },
+}
+H3.storyName = 'Variant: H3'
+
+export const H4: Story = {
+  args: {
+    variant: 'h4',
+    children: 'Lorem Ipsum',
+  },
+}
+H4.storyName = 'Variant: H4'
+
+export const H5: Story = {
+  args: {
+    variant: 'h5',
+    children: 'Lorem Ipsum',
+  },
+}
+H5.storyName = 'Variant: H5'
+
+export const H6: Story = {
+  args: {
+    variant: 'h6',
+    children: 'Lorem Ipsum',
+  },
+}
+H6.storyName = 'Variant: H6'
+
+export const Subtitle1: Story = {
+  args: {
+    variant: 'subtitle1',
+    children: 'Lorem Ipsum',
+  },
+}
+Subtitle1.storyName = 'Variant: Subtitle1'
+
+export const Subtitle2: Story = {
+  args: {
+    variant: 'subtitle2',
+    children: 'Lorem Ipsum',
+  },
+}
+Subtitle2.storyName = 'Variant: Subtitle2'
+
+export const Body1: Story = {
+  args: {
+    variant: 'body1',
+    children: 'Lorem Ipsum',
+  },
+}
+Body1.storyName = 'Variant: Body1'
+
+export const Body2: Story = {
+  args: {
+    variant: 'body2',
+    children: 'Lorem Ipsum',
+  },
+}
+Body2.storyName = 'Variant: Body2'
 
 // color 템플릿 정의
-const ColorTemplate: StoryFn = () => {
-  return (
-    <div>
-      <Typography color="primary">color=&quot;primary&quot;</Typography>
-      <Typography color="secondary">color=&quot;secondary&quot;</Typography>
-    </div>
-  )
+export const Primary: Story = {
+  args: {
+    variant: 'h1',
+    color: 'primary',
+    children: 'Lorem Ipsum',
+  },
 }
+Primary.storyName = 'Color: Primary'
 
-// FontSize 스토리
-export const FontSize = VariantTemplate.bind({})
-
-// Color 스토리
-export const Color = ColorTemplate.bind({})
+export const Secondary: Story = {
+  args: {
+    variant: 'h1',
+    color: 'secondary',
+    children: 'Lorem Ipsum',
+  },
+}
+Secondary.storyName = 'Color: Secondary'

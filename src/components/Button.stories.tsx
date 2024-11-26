@@ -1,91 +1,185 @@
-import { Meta, StoryFn } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import Button from './Button'
 
-export default {
+const meta = {
   title: 'Components/Button',
   component: Button,
+  parameters: {
+    layout: 'centered',
+  },
   argTypes: {
     onClick: { action: 'clicked' },
   },
-} as Meta<typeof Button>
+  tags: ['autodocs'],
+  args: {
+    // onClick: fn(),
+  },
+} satisfies Meta<typeof Button>
+
+export default meta
+type Story = StoryObj<typeof meta>
 
 // variant 정의
-const VariantTemplate: StoryFn = () => {
-  return (
-    <>
-      <div>
-        <Button>Default</Button>
-        <br />
+export const Default: Story = {
+  args: {
+    size: undefined,
+    variant: undefined,
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
 
-        <Button size="md" variant="primary" onClick={() => {}}>
-          variant=&quot;primary&quot;
-        </Button>
-        <br />
+export const SizeXS: Story = {
+  args: {
+    size: 'xs',
+    variant: 'primary',
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
+SizeXS.storyName = 'Size: XS'
 
-        <Button size="md" variant="secondary" onClick={() => {}}>
-          variant=&quot;secondary&quot;
-        </Button>
-        <br />
+export const SizeSM: Story = {
+  args: {
+    size: 'sm',
+    variant: 'primary',
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
+SizeSM.storyName = 'Size: SM'
 
-        <Button size="md" variant="border" onClick={() => {}}>
-          variant=&quot;border&quot;
-        </Button>
-        <br />
+export const SizeMD: Story = {
+  args: {
+    size: 'md',
+    variant: 'primary',
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
+SizeMD.storyName = 'Size: MD'
 
-        <Button size="md" variant="borderPrimary" onClick={() => {}}>
-          variant=&quot;borderPrimary&quot;
-        </Button>
-        <br />
+export const SizeLG: Story = {
+  args: {
+    size: 'lg',
+    variant: 'primary',
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
+SizeLG.storyName = 'Size: LG'
 
-        <Button size="md" variant="borderSecondary" onClick={() => {}}>
-          variant=&quot;borderSecondary&quot;
-        </Button>
-        <br />
+export const SizeXL: Story = {
+  args: {
+    size: 'xl',
+    variant: 'primary',
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
+SizeXL.storyName = 'Size: XL'
 
-        <Button size="md" variant="primary" disabled onClick={() => {}}>
-          disabled
-        </Button>
-      </div>
-    </>
-  )
+export const Primary: Story = {
+  args: {
+    size: 'md',
+    variant: 'primary',
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
+Primary.storyName = 'Variant: Primary'
+
+export const Secondary: Story = {
+  args: {
+    size: 'md',
+    variant: 'secondary',
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
+Secondary.storyName = 'Variant: Secondary'
+
+export const Border: Story = {
+  args: {
+    size: 'md',
+    variant: 'border',
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
+Border.storyName = 'Variant: Border'
+
+export const BorderPrimary: Story = {
+  args: {
+    size: 'md',
+    variant: 'borderPrimary',
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
+BorderPrimary.storyName = 'Variant: BorderPrimary'
+
+export const BorderSecondary: Story = {
+  args: {
+    size: 'md',
+    variant: 'borderSecondary',
+    disabled: false,
+    onClick: () => {},
+    children: 'Button',
+  },
+}
+BorderSecondary.storyName = 'Variant: BorderSecondary'
+
+export const Disabled: Story = {
+  args: {
+    size: 'md',
+    variant: 'primary',
+    disabled: true,
+    onClick: () => {},
+    children: 'Button',
+  },
 }
 
 // size 정의
-const SizeTemplate: StoryFn = () => {
-  return (
-    <>
-      <div>
-        <Button size="xs" variant="borderPrimary" onClick={() => {}}>
-          size=&quot;xs&quot;
-        </Button>
-        <br />
+// const SizeTemplate: StoryFn = () => {
+//   return (
+//     <>
+//       <div>
+//         <Button size="xs" Variant: borderPrimary" onClick={() => {}}>
+//           size=&quot;xs&quot;
+//         </Button>
+//         <br />
 
-        <Button size="sm" variant="borderPrimary" onClick={() => {}}>
-          size=&quot;sm&quot;
-        </Button>
-        <br />
+//         <Button size="sm" Variant: borderPrimary" onClick={() => {}}>
+//           size=&quot;sm&quot;
+//         </Button>
+//         <br />
 
-        <Button size="md" variant="borderPrimary" onClick={() => {}}>
-          size=&quot;md&quot;
-        </Button>
-        <br />
+//         <Button size="md" Variant: borderPrimary" onClick={() => {}}>
+//           size=&quot;md&quot;
+//         </Button>
+//         <br />
 
-        <Button size="lg" variant="borderPrimary" onClick={() => {}}>
-          size=&quot;lg&quot;
-        </Button>
-        <br />
+//         <Button size="lg" Variant: borderPrimary" onClick={() => {}}>
+//           size=&quot;lg&quot;
+//         </Button>
+//         <br />
 
-        <Button size="xl" variant="borderPrimary" onClick={() => {}}>
-          size=&quot;xl&quot;
-        </Button>
-        <br />
-      </div>
-    </>
-  )
-}
-
-// Primary 스토리
-export const Styles = VariantTemplate.bind({})
-
-// Size 스토리
-export const Size = SizeTemplate.bind({})
+//         <Button size="xl" Variant: borderPrimary" onClick={() => {}}>
+//           size=&quot;xl&quot;
+//         </Button>
+//         <br />
+//       </div>
+//     </>
+//   )
+// }

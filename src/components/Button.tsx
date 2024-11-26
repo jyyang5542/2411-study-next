@@ -3,7 +3,7 @@ import styles from './Button.module.scss'
 
 export interface ButtonProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-  variant?: null | 'primary' | 'secondary' | 'border' | 'borderPrimary' | 'borderSecondary'
+  variant?: 'primary' | 'secondary' | 'border' | 'borderPrimary' | 'borderSecondary'
   disabled?: boolean
   onClick?: () => void
   children: ReactNode
