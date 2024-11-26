@@ -1,32 +1,51 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { useFetch } from '@/hooks/useFetch'
+import React, { useEffect, useState } from 'react'
+import http from '@/libs/http'
 
-const ExamplePage = () => {
-  const [data, setData] = useState<any>(null)
+interface Post {
+  id: string
+  title: string
+  content: string
+}
+
+const PostList: React.FC = () => {
+  const [posts, setPosts] = useState<Post[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const fetchData = async () => {
+    async function fetchPosts() {
       try {
-        const result = await useFetch<any>('/posts/1')
-        setData(result)
-      } catch (err: any) {
-        setError(err.message)
+        const { data } = await http.get<Post[]>('/api/posts/1') // 서버에서 배열 반환
+        setPosts(data)
+      } catch (err) {
+        setError('Failed to fetch posts')
+        console.error(err)
+      } finally {
+        setLoading(false)
       }
     }
 
-    fetchData()
+    fetchPosts()
   }, [])
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error}</p>
 
   return (
     <div>
-      <h1>Example Page</h1>
-      {error && <p>Error: {error}</p>}
-      {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <p>Loading...</p>}
+      <h1>Post List</h1>
+      <ul>
+        {posts.map(post => (
+          <li key={post.title}>
+            <h2>{post.title}</h2>
+            <p>{post.content}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
 
-export default ExamplePage
+export default PostList
