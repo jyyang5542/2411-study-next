@@ -17,8 +17,12 @@ const PostList: React.FC = () => {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const { data } = await http.get<Post[]>('/api/posts/1') // 서버에서 배열 반환
-        setPosts(data)
+        const { data } = await http.get<Post[]>('/api/posts/array') // 서버에서 배열 반환
+        if (Array.isArray(data)) {
+          setPosts(data)
+        } else {
+          throw new Error('Expected an array but got a different structure')
+        }
       } catch (err) {
         setError('Failed to fetch posts')
         console.error(err)
@@ -38,7 +42,7 @@ const PostList: React.FC = () => {
       <h1>Post List</h1>
       <ul>
         {posts.map(post => (
-          <li key={post.title}>
+          <li key={post.id}>
             <h2>{post.title}</h2>
             <p>{post.content}</p>
           </li>
