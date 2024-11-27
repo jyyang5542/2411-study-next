@@ -149,37 +149,3 @@ export const Disabled: Story = {
     children: 'Button',
   },
 }
-
-// size 정의
-// const SizeTemplate: StoryFn = () => {
-//   return (
-//     <>
-//       <div>
-//         <Button size="xs" Variant: borderPrimary" onClick={() => {}}>
-//           size=&quot;xs&quot;
-//         </Button>
-//         <br />
-
-//         <Button size="sm" Variant: borderPrimary" onClick={() => {}}>
-//           size=&quot;sm&quot;
-//         </Button>
-//         <br />
-
-//         <Button size="md" Variant: borderPrimary" onClick={() => {}}>
-//           size=&quot;md&quot;
-//         </Button>
-//         <br />
-
-//         <Button size="lg" Variant: borderPrimary" onClick={() => {}}>
-//           size=&quot;lg&quot;
-//         </Button>
-//         <br />
-
-//         <Button size="xl" Variant: borderPrimary" onClick={() => {}}>
-//           size=&quot;xl&quot;
-//         </Button>
-//         <br />
-//       </div>
-//     </>
-//   )
-// }

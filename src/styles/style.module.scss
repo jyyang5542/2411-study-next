@@ -1,19 +1,231 @@
 @charset 'utf-8';
 
-@use './variables';
-@use './mixins';
-@use './functions';
+@use './variables' as var;
+@use './mixins' as mixin;
+@use './functions' as fn;
 
 /****************************************
  (S) 레이아웃 관련 스타일
 ****************************************/
-// Grid (display: flex)
-.row {
-  $columns: 12;
-  @for $i from 1 through $columns {
-    .col-#{$i} {
-      width: #{100% / $columns * $i};
+// 여백
+@for $i from 1 through 100 {
+  .m#{$i} {
+    margin: #{$i / 16}rem;
+  }
+  .mx#{$i} {
+    margin-left: #{$i / 16}rem;
+    margin-right: #{$i / 16}rem;
+  }
+  .my#{$i} {
+    margin-top: #{$i / 16}rem;
+    margin-bottom: #{$i / 16}rem;
+  }
+  .mt#{$i} {
+    margin-top: #{$i / 16}rem;
+  }
+  .mb#{$i} {
+    margin-bottom: #{$i / 16}rem;
+  }
+  .ml#{$i} {
+    margin-left: #{$i / 16}rem;
+  }
+  .mr#{$i} {
+    margin-right: #{$i / 16}rem;
+  }
+  .p#{$i} {
+    padding: #{$i / 16}rem;
+  }
+  .px#{$i} {
+    padding-left: #{$i / 16}rem;
+    padding-right: #{$i / 16}rem;
+  }
+  .py#{$i} {
+    padding-top: #{$i / 16}rem;
+    padding-bottom: #{$i / 16}rem;
+  }
+  .pt#{$i} {
+    padding-top: #{$i / 16}rem;
+  }
+  .pb#{$i} {
+    padding-bottom: #{$i / 16}rem;
+  }
+  .pl#{$i} {
+    padding-left: #{$i / 16}rem;
+  }
+  .pr#{$i} {
+    padding-right: #{$i / 16}rem;
+  }
+  .gap#{$i} {
+    gap: #{$i / 16}rem;
+    grid-gap: #{$i / 16}rem;
+  }
+  .gapX#{$i} {
+    gap: 0 #{$i / 16}rem;
+    grid-gap: 0 #{$i / 16}rem;
+  }
+  .gapY#{$i} {
+    gap: #{$i / 16}rem 0;
+    grid-gap: #{$i / 16}rem 0;
+  }
+  @media screen and (max-width: var.$vw_tab) {
+    .mTab#{$i} {
+      margin: #{$i / 16}rem;
     }
+    .mxTab#{$i} {
+      margin-left: #{$i / 16}rem;
+      margin-right: #{$i / 16}rem;
+    }
+    .myTab#{$i} {
+      margin-top: #{$i / 16}rem;
+      margin-bottom: #{$i / 16}rem;
+    }
+    .mtTab#{$i} {
+      margin-top: #{$i / 16}rem;
+    }
+    .mbTab#{$i} {
+      margin-bottom: #{$i / 16}rem;
+    }
+    .mlTab#{$i} {
+      margin-left: #{$i / 16}rem;
+    }
+    .mrTab#{$i} {
+      margin-right: #{$i / 16}rem;
+    }
+    .pTab#{$i} {
+      padding: #{$i / 16}rem;
+    }
+    .pxTab#{$i} {
+      padding-left: #{$i / 16}rem;
+      padding-right: #{$i / 16}rem;
+    }
+    .pyTab#{$i} {
+      padding-top: #{$i / 16}rem;
+      padding-bottom: #{$i / 16}rem;
+    }
+    .ptTab#{$i} {
+      padding-top: #{$i / 16}rem;
+    }
+    .pbTab#{$i} {
+      padding-bottom: #{$i / 16}rem;
+    }
+    .plTab#{$i} {
+      padding-left: #{$i / 16}rem;
+    }
+    .prTab#{$i} {
+      padding-right: #{$i / 16}rem;
+    }
+    .gapTab#{$i} {
+      gap: #{$i / 16}rem;
+      grid-gap: #{$i / 16}rem;
+    }
+    .gapTabX#{$i} {
+      gap: 0 #{$i / 16}rem;
+      grid-gap: 0 #{$i / 16}rem;
+    }
+    .gapTabY#{$i} {
+      gap: #{$i / 16}rem 0;
+      grid-gap: #{$i / 16}rem 0;
+    }
+  }
+  @media screen and (max-width: var.$vw_mo) {
+    .mMo#{$i} {
+      margin: #{$i / 16}rem;
+    }
+    .mxMo#{$i} {
+      margin-left: #{$i / 16}rem;
+      margin-right: #{$i / 16}rem;
+    }
+    .myMo#{$i} {
+      margin-top: #{$i / 16}rem;
+      margin-bottom: #{$i / 16}rem;
+    }
+    .mtMo#{$i} {
+      margin-top: #{$i / 16}rem;
+    }
+    .mbMo#{$i} {
+      margin-bottom: #{$i / 16}rem;
+    }
+    .mlMo#{$i} {
+      margin-left: #{$i / 16}rem;
+    }
+    .mrMo#{$i} {
+      margin-right: #{$i / 16}rem;
+    }
+    .pMo#{$i} {
+      padding: #{$i / 16}rem;
+    }
+    .pxMo#{$i} {
+      padding-left: #{$i / 16}rem;
+      padding-right: #{$i / 16}rem;
+    }
+    .pyMo#{$i} {
+      padding-top: #{$i / 16}rem;
+      padding-bottom: #{$i / 16}rem;
+    }
+    .ptMo#{$i} {
+      padding-top: #{$i / 16}rem;
+    }
+    .pbMo#{$i} {
+      padding-bottom: #{$i / 16}rem;
+    }
+    .plMo#{$i} {
+      padding-left: #{$i / 16}rem;
+    }
+    .prMo#{$i} {
+      padding-right: #{$i / 16}rem;
+    }
+    .gapMo#{$i} {
+      gap: #{$i / 16}rem;
+      grid-gap: #{$i / 16}rem;
+    }
+    .gapMoX#{$i} {
+      gap: 0 #{$i / 16}rem;
+      grid-gap: 0 #{$i / 16}rem;
+    }
+    .gapMoY#{$i} {
+      gap: #{$i / 16}rem 0;
+      grid-gap: #{$i / 16}rem 0;
+    }
+  }
+}
+// Grid (display: flex)
+.flex {
+  display: flex;
+  $fr: 12;
+
+  &.row {
+    flex-direction: row;
+    @for $i from 1 through $fr {
+      .col#{$i} {
+        width: #{100% / $fr * $i};
+      }
+    }
+  }
+  &.column {
+    flex-direction: column;
+    @for $i from 1 through $fr {
+      .row#{$i} {
+        height: #{100% / $fr * $i};
+      }
+    }
+  }
+  &.aStart {
+    align-items: flex-start;
+  }
+  &.aCenter {
+    align-items: center;
+  }
+  &.aEnd {
+    align-items: flex-end;
+  }
+  &.jStart {
+    justify-content: flex-start;
+  }
+  &.jCenter {
+    justify-content: center;
+  }
+  &.jEnd {
+    justify-content: flex-end;
   }
 }
 // Grid (display: grid)
